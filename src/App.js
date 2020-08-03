@@ -40,7 +40,17 @@ class App extends Component {
       todos: newList
     })
   }
-  removeToDo = ()=>{}
+  removeToDo = (id)=>{
+    var todos = this.state.todos
+
+    var filtered = todos.filter((todo)=>{
+      return todo.id != id
+    })
+
+    this.setState({
+      todos: filtered
+    })
+  }
   updateToDo = ()=>{}
 
   render(){
@@ -53,6 +63,7 @@ class App extends Component {
                 this.state.todos.map((todo)=>{
                   var todoProps = {
                     key: todo.id,
+                    removeToDo: this.removeToDo,
                     ...todo
                   }
                   return(

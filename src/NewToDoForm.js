@@ -52,7 +52,7 @@ class NewToDoForm extends Component{
               
                     <button type="submit" className="btn btn-primary" onClick={this.handleAddBtn}>Add</button>
                 </form>
-              </div>
+            </div>
         )
     } 
 }
