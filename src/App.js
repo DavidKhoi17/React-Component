@@ -51,7 +51,20 @@ class App extends Component {
       todos: filtered
     })
   }
-  updateToDo = ()=>{}
+  updateToDo = (id, data)=>{
+    // id = 1
+    // data = {
+    //   content: 'Water plants and garden'
+    // }
+
+    var todos = this.state.todos
+    var updated = todos.map((todo)=>{
+      return (todo.id == id) ? {...todo,...data} : todo
+    })
+    this.setState({
+      todos:updated
+    })
+  }
 
   render(){
     return(
